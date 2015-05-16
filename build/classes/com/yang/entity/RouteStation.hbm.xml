@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yang.entity">
+
+	<class name="RouteStation" table="tb_route_Station">
+		<id name="id" >
+            <generator class="native"/>
+		</id>
+		<property name="marker"/>
+		
+		<many-to-one name="route" class="Route" column="route_id"/>
+		<many-to-one name="station" class="Station" column="station_id"/>
+	</class>
+	
+</hibernate-mapping>

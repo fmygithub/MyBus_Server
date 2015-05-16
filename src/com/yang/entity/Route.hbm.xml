@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yang.entity">
+
+	<class name="Route" table="tb_route">
+		<id name="routeId" column="route_id">
+            <generator class="native"/>
+		</id>
+		<property name="routeName" column="route_name"/>
+		
+		<!-- stations属性，本类与Station是多对多关系 -->		
+		<set name="stations" table="tb_route_station">
+			<key column="route_id"/>
+			<many-to-many class="Station" column="station_id"/>
+		</set>
+		
+		<!-- routeStations属性，本类与RouteStation构成一对多关系 -->
+		<set name="routeStations" table="tb_route_station" order-by="id" inverse="true">
+			<key column="route_id"/>
+			<one-to-many class="RouteStation"/>
+		</set>
+	</class>
+	
+</hibernate-mapping>

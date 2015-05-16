@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置为开发模式 -->
+    <constant name="struts.devMode" value="true" />
+	<!-- 配置扩展名为action -->
+    <constant name="struts.action.extension" value="action" />
+    <!-- 配置主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+
+
+
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<!-- 用户管理 -->
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="list">/user/userList.jsp</result>
+			<result name="add">/user/addUser.jsp</result>
+			<result name="toList" type="redirectAction">userAction_list</result>
+		</action>
+		
+		<!-- 路线管理 -->
+		<action name="routeAction_*" class="routeAction" method="{1}">
+			<result name="list">/route/addRoute.jsp</result>
+			<result name="toList" type="redirectAction">routeAction_list</result>
+		</action>
+		
+		
+
+    </package>
+
+</struts>
