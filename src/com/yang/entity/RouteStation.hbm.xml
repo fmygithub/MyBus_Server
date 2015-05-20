@@ -5,14 +5,17 @@
 
 <hibernate-mapping package="com.yang.entity">
 
-	<class name="RouteStation" table="tb_route_Station">
-		<id name="id" >
-            <generator class="native"/>
-		</id>
-		<property name="marker"/>
-		
-		<many-to-one name="route" class="Route" column="route_id"/>
-		<many-to-one name="station" class="Station" column="station_id"/>
+	<!-- <class name="RouteStation" table="tb_route_station"> <id name="id" 
+		> <generator class="native"/> </id> <property name="marker"/> <many-to-one 
+		name="route" class="Route" column="route_id"/> <many-to-one name="station" 
+		class="Station" column="station_id"/> </class> -->
+	<class name="RouteStation" table="tb_route_station">
+		<composite-id>
+			<key-many-to-one name="route" class="Route" column="route_id"
+				lazy="false" />
+			<key-many-to-one name="station" class="Station"
+				column="station_id" lazy="false" />
+		</composite-id>
+		<property name="marker" />
 	</class>
-	
 </hibernate-mapping>

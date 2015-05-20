@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yang.entity">
+
+	<class name="DirectRouteView" table="view_direct_route">
+		<composite-id name="id" class="DirectRouteViewId">
+			<key-property name="beginStationId" column="begin_station"/>
+			<key-property name="beginMarker" column="begin_marker"/>
+			<key-property name="routeId1" column="route_id"/>
+			<key-property name="tranferStationId" column="tranfer_station"/>
+			<key-property name="tranferMarker" column="tranfer_marker"/>
+			<key-property name="endStationId" column="end_station"/>
+			<key-property name="endMarker" column="end_marker"/>
+			<key-property name="routeId2" column="route_id2"/>
+			<key-property name="stationCount" column="station_count"/>
+		</composite-id>
+	</class>
+
+</hibernate-mapping>

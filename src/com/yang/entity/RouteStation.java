@@ -1,11 +1,17 @@
 package com.yang.entity;
 
-public class RouteStation {
-	private int id;
+import java.io.Serializable;
+
+public class RouteStation implements Serializable{
+	/**
+	 * @Fields serialVersionUID: TODO
+	 */
+	private static final long serialVersionUID = 1L;
+	private Long id;
 	/**
 	 * 站点在路线中的位置
 	 */
-	private int marker;
+	private Long marker;
 	/**
 	 * 路线实体，与中间表构成一对多
 	 */
@@ -15,16 +21,16 @@ public class RouteStation {
 	 */
 	private Station station;
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getMarker() {
+	public Long getMarker() {
 		return marker;
 	}
-	public void setMarker(int marker) {
+	public void setMarker(Long marker) {
 		this.marker = marker;
 	}
 	public Route getRoute() {

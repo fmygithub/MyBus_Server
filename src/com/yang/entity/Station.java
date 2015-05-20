@@ -10,28 +10,32 @@ import java.util.Set;
  * @date: 2015-5-15
  */
 public class Station {
-	private int stationId;
+	private Long stationId;
 	/**
 	 * 站点名
 	 */
 	private String stationName;
 	/**
-	 * 站点位置对象（一对一关系）
+	 * x轴坐标值
 	 */
-	private Position position;
+	private String axis_x;
+	/**
+	 * y轴坐标值
+	 */
+	private String axis_y;
 	/**
 	 * 路线对象（多对多关系）
 	 */
-	private Set<Route> routes;
+	/*private Set<Route> routes;*/
 	/**
 	 * 与中间表构成一对多关系
 	 */
 	private Set<RouteStation> routeStations;
 	
-	public int getStationId() {
+	public Long getStationId() {
 		return stationId;
 	}
-	public void setStationId(int stationId) {
+	public void setStationId(Long stationId) {
 		this.stationId = stationId;
 	}
 	public String getStationName() {
@@ -40,18 +44,25 @@ public class Station {
 	public void setStationName(String stationName) {
 		this.stationName = stationName;
 	}
-	public Position getPosition() {
-		return position;
+	
+	public String getAxis_x() {
+		return axis_x;
 	}
-	public void setPosition(Position position) {
-		this.position = position;
+	public void setAxis_x(String axis_x) {
+		this.axis_x = axis_x;
 	}
-	public Set<Route> getRoutes() {
+	public String getAxis_y() {
+		return axis_y;
+	}
+	public void setAxis_y(String axis_y) {
+		this.axis_y = axis_y;
+	}
+	/*public Set<Route> getRoutes() {
 		return routes;
 	}
 	public void setRoutes(Set<Route> routes) {
 		this.routes = routes;
-	}
+	}*/
 	public Set<RouteStation> getRouteStations() {
 		return routeStations;
 	}

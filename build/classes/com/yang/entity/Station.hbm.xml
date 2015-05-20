@@ -7,24 +7,22 @@
 
 	<class name="Station" table="tb_station">
 		<id name="stationId" column="station_id">
-            <generator class="native"/>
+			<generator class="native" />
 		</id>
-		<property name="stationName" column="station_name"/>
-		
-		<!-- routes属性， 本类与Route构成多对多关系 -->		
-		<set name="routes" table="tb_route_station">
-			<key column="station_id"/>
-			<many-to-many class="Route" column="route_id"/>
-		</set>
-		
-		<!-- position属性，本类与Position构成一对一关系 -->
-		<many-to-one name="position" class="Position" column="position_id"/>
-		
+		<property name="stationName" column="station_name" />
+		<property name="axis_x" />
+		<property name="axis_y" />
+
+		<!-- routes属性， 本类与Route构成多对多关系 -->
+		<!-- <set name="routes" table="tb_route_station"> <key column="station_id"/> 
+			<many-to-many class="Route" column="route_id"/> </set> -->
+
 		<!-- routeSations属性，本类与RouteStation构成一对多关系 -->
-		<set name="routeStations" table="tb_route_station" order-by="id" inverse="true">
-			<key column="station_id"/>
-			<one-to-many class="RouteStation"/>
+		<set name="routeStations" table="tb_route_station" order-by="id"
+			inverse="true" cascade="all" >
+			<key column="station_id" />
+			<one-to-many class="RouteStation" />
 		</set>
 	</class>
-	
+
 </hibernate-mapping>

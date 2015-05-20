@@ -16,7 +16,7 @@ public interface BaseDao<T> {
 	 * 
 	 * @param i
 	 */
-	void delete(int i);
+	void delete(Long i);
 
 	/**
 	 * 更新实体
@@ -31,7 +31,7 @@ public interface BaseDao<T> {
 	 * @param id
 	 * @return
 	 */
-	T getById(Long id);
+	T findById(Long id);
 
 	/**
 	 * 查询实体
@@ -39,7 +39,7 @@ public interface BaseDao<T> {
 	 * @param ids
 	 * @return
 	 */
-	List<T> getByIds(Long[] ids);
+	List<T> findByIds(Long[] ids);
 
 	/**
 	 * 查询实体

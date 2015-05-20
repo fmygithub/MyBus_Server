@@ -8,13 +8,13 @@ package com.yang.entity;
  * @date: 2015-5-15
  */
 public class User {
-	private int userId;
+	private Long userId;
 	private String userName;
 	private String password;
-	public int getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {

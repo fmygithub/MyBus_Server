@@ -24,10 +24,23 @@
 		
 		<!-- 路线管理 -->
 		<action name="routeAction_*" class="routeAction" method="{1}">
-			<result name="list">/route/addRoute.jsp</result>
+			<result name="add">/route/addRoute.jsp</result>
+			<result name="list">/route/list.jsp</result>
 			<result name="toList" type="redirectAction">routeAction_list</result>
 		</action>
 		
+		<!-- 站点管理 -->
+		<action name="stationAction_*" class="stationAction" method="{1}">
+			<result name="add">/station/addStation.jsp</result>
+			<result name="list">/station/list.jsp</result>
+			<result name="toList" type="redirectAction">stationAction_list</result>
+		</action>
+		
+		<!-- 路线查询管理 -->
+		<action name="routeCheckAction_*" class="routeCheckAction" method="{1}">
+			<result name="checkUI">/routeCheck/checkRoute.jsp</result>
+			<result name="check">/routeCheck/showRoute.jsp</result>
+		</action>
 		
 
     </package>

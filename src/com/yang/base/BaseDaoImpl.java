@@ -35,19 +35,19 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 		getSession().update(entity);
 	}
 
-	public void delete(int id) {
+	public void delete(Long id) {
 		Object obj = getSession().get(clazz, id);
 		getSession().delete(obj);
 	}
 
-	public T getById(Long id) {
+	public T findById(Long id) {
 		if (id == null) {
 			return null;
 		}
 		return (T) getSession().get(clazz, id);
 	}
 
-	public List<T> getByIds(Long[] ids) {
+	public List<T> findByIds(Long[] ids) {
 		if (ids == null || ids.length == 0) {
 			return Collections.EMPTY_LIST;
 		}

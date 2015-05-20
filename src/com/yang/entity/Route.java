@@ -10,25 +10,25 @@ import java.util.Set;
  * @date: 2015-5-15
  */
 public class Route {
-	private int routeId;
+	private Long routeId;
 	/**
 	 * 路线名
 	 */
 	private String routeName;
 	/**
 	 * 站点对象（多对多关系）
-	 */
-	private Set<Station> stations;
+	 *//*
+	private Set<Station> stations;*/
 	
 	/**
 	 * 与中间表构成一对多关系
 	 */
 	private Set<RouteStation> routeStations;
 	
-	public int getRouteId() {
+	public Long getRouteId() {
 		return routeId;
 	}
-	public void setRouteId(int routeId) {
+	public void setRouteId(Long routeId) {
 		this.routeId = routeId;
 	}
 	public String getRouteName() {
@@ -37,12 +37,12 @@ public class Route {
 	public void setRouteName(String routeName) {
 		this.routeName = routeName;
 	}
-	public Set<Station> getStations() {
+	/*public Set<Station> getStations() {
 		return stations;
 	}
 	public void setStations(Set<Station> stations) {
 		this.stations = stations;
-	}
+	}*/
 	public Set<RouteStation> getRouteStations() {
 		return routeStations;
 	}

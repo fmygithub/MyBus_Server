@@ -23,8 +23,8 @@
 	<mapping resource="com/yang/entity/User.hbm.xml" />
 	<mapping resource="com/yang/entity/Route.hbm.xml" />
 	<mapping resource="com/yang/entity/Station.hbm.xml" />
-	<mapping resource="com/yang/entity/Position.hbm.xml" />
 	<mapping resource="com/yang/entity/RouteStation.hbm.xml" />
+	<mapping resource="com/yang/entity/DirectRouteView.hbm.xml" />
 
 
 </session-factory>
