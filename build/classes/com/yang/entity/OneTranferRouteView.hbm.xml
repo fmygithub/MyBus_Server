@@ -5,17 +5,24 @@
 
 <hibernate-mapping package="com.yang.entity">
 
-	<class name="DirectRouteView" table="view_direct_route">
-		<composite-id name="id" class="DirectRouteViewId">
-			<key-property name="beginStationId" column="begin_station"/>
+	<class name="OneTranferRouteView" table="view_one_tranfer_route">
+		<composite-id name="id" class="OneTranferRouteViewId">
+			<key-property name="beginStationId" column="begin_station_id"/>
+			<key-property name="beginStationName" column="begin_station_name"/>
 			<key-property name="beginMarker" column="begin_marker"/>
-			<key-property name="routeId1" column="route_id"/>
-			<key-property name="tranferStationId" column="tranfer_station"/>
+			<key-property name="routeId1" column="route_id1"/>
+			<key-property name="routeName1" column="route_name1"/>
+			<key-property name="stationCount1" column="station_count1"/>
+			<key-property name="tranferStationId" column="tranfer_station_id"/>
+			<key-property name="tranferStationName" column="tranfer_station_name"/>
 			<key-property name="tranferMarker" column="tranfer_marker"/>
-			<key-property name="endStationId" column="end_station"/>
+			<key-property name="tranferMarker1" column="tranfer_marker1"/>
+			<key-property name="endStationId" column="end_station_id"/>
+			<key-property name="endStationName" column="end_station_name"/>
 			<key-property name="endMarker" column="end_marker"/>
 			<key-property name="routeId2" column="route_id2"/>
-			<key-property name="stationCount" column="station_count"/>
+			<key-property name="routeName2" column="route_name2"/>
+			<key-property name="stationCount2" column="station_count2"/>
 		</composite-id>
 	</class>
 

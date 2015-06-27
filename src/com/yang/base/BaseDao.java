@@ -24,7 +24,7 @@ public interface BaseDao<T> {
 	 * @param entity
 	 */
 	void update(T entity);
-
+	void merge(T entity);
 	/**
 	 * 查询实体，如果id为null，则返回null，并不会抛异常�?
 	 * 

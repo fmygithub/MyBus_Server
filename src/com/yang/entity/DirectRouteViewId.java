@@ -12,6 +12,10 @@ public class DirectRouteViewId implements Serializable{
 	 */
 	private Long beginStationId;
 	/**
+	 * 起始站点name
+	 */
+	private String beginStationName;
+	/**
 	 * 起始站点在路线中的位置
 	 */
 	private Long beginMarker;
@@ -20,6 +24,10 @@ public class DirectRouteViewId implements Serializable{
 	 */
 	private Long endStationId;
 	/**
+	 * 目标站点name
+	 */
+	private String endStationName;
+	/**
 	 * 目标站点在路线中的位置
 	 */
 	private Long endMarker;
@@ -27,6 +35,7 @@ public class DirectRouteViewId implements Serializable{
 	 * 路线id
 	 */
 	private Long routeId;
+	private String routeName;
 	/**
 	 * 经过的总站点数
 	 */
@@ -66,6 +75,24 @@ public class DirectRouteViewId implements Serializable{
 	}
 	public void setStationCount(Integer stationCount) {
 		this.stationCount = stationCount;
+	}
+	public String getBeginStationName() {
+		return beginStationName;
+	}
+	public void setBeginStationName(String beginStationName) {
+		this.beginStationName = beginStationName;
+	}
+	public String getEndStationName() {
+		return endStationName;
+	}
+	public void setEndStationName(String endStationName) {
+		this.endStationName = endStationName;
+	}
+	public String getRouteName() {
+		return routeName;
+	}
+	public void setRouteName(String routeName) {
+		this.routeName = routeName;
 	}
 	
 }

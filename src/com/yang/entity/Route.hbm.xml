@@ -16,7 +16,7 @@
 			<many-to-many class="Station" column="station_id"/> </set> -->
 
 		<!-- routeStations属性，本类与RouteStation构成一对多关系 -->
-		<set name="routeStations" table="tb_route_station" order-by="id"
+		<set name="routeStations" table="tb_route_station" order-by="marker"
 			inverse="true" cascade="all" lazy="false" >
 			<key column="route_id" />
 			<one-to-many class="RouteStation" />

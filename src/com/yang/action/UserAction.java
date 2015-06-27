@@ -25,9 +25,11 @@ public class UserAction extends BaseAction<User>{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	//http请求和响应
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpServletResponse response = ServletActionContext.getResponse();
 	
+	//要传送的json对象
 	JSONObject temp = new JSONObject();
 	JSONObject json = new JSONObject();
 
@@ -69,18 +71,55 @@ public class UserAction extends BaseAction<User>{
 	 * @author: fengmengyang
 	 * @date: 2015-5-15
 	 */
-	public String login() {
+	public String login() throws Exception{
 		System.out.println(model.getUserName());
 		User user = userService.findUserByName(model.getUserName());
 		if (user != null) {
 			if (user.getPassword().equals(model.getPassword())){
-				JOptionPane.showMessageDialog(null, "登陆成功！");
+				temp.put("message", "login_success");
+				//JOptionPane.showMessageDialog(null, "登陆成功！");
 			} else {
-				JOptionPane.showMessageDialog(null, "密码不正确!");
+				temp.put("message", "password_wrong");
+				//JOptionPane.showMessageDialog(null, "密码不正确!");
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "用户不存在！");
+			temp.put("message", "username_wrong");
+			//JOptionPane.showMessageDialog(null, "用户不存在！");
 		}
+		json.put("json", temp);
+		response.setCharacterEncoding("utf-8");
+		System.out.println("---"+json.toString());
+		response.getWriter().write(json.toString());
+		return null;
+	}
+	/**
+	 * 
+	 * @Description: 客户端用户注册
+	 * @return String
+	 * @throws
+	 * @author: fengmengyang
+	 * @date: 2015-6-18
+	 */
+	public String register() throws Exception{
+		System.out.println(model.getUserName());
+		//添加之前先校验
+		User user = userService.findUserByName(model.getUserName());
+		if (user == null) {
+			try {
+				userService.save(model);
+				temp.put("message", "register_success");
+			} catch (Exception e) {
+				//有异常就表示保存失败
+				temp.put("message", "register_fail");
+				e.getStackTrace();
+			}
+		} else {
+			temp.put("message", "user_existed");
+		}
+		json.put("json", temp);
+		response.setCharacterEncoding("utf-8");
+		System.out.println("---"+json.toString());
+		response.getWriter().write(json.toString());
 		return null;
 	}
 }

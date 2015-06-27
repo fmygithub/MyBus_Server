@@ -29,20 +29,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<tr>
     		<td>路线id</td>
     		<td>路线名</td>
-    		<td>站点</td>
+    		<!-- <td>站点</td> -->
     		<td>操作</td>
     	</tr>
     	<s:iterator value="routeList">
     		<tr>
     			<td>${routeId }</td>
-    			<td>${routeName }</td>
-    			<td>[
+    			<td><s:a action="routeAction_routeStations?routeId=%{routeId}">${routeName }</s:a></td>
+    			<%-- <td>[
     				<s:iterator value="routeStations">
     					${station.stationName },
     				</s:iterator>
     				]
+    			</td> --%>
+    			<td>
+    				<s:a action="routeAction_delete?routeId=%{routeId}">删除</s:a>
+    				<%-- <s:a action="routeAction_manageStation?routeId=%{routeId}">站点管理</s:a> --%>
     			</td>
-    			<td><s:a action="routeAction_delete?routeId=%{routeId}">删除</s:a></td>
     		</tr>
     	</s:iterator>
     </table>

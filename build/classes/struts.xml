@@ -16,17 +16,18 @@
     <package name="default" namespace="/" extends="struts-default">
 		
 		<!-- 用户管理 -->
-		<action name="userAction_*" class="userAction" method="{1}">
+		<!-- <action name="userAction_*" class="userAction" method="{1}">
 			<result name="list">/user/userList.jsp</result>
 			<result name="add">/user/addUser.jsp</result>
 			<result name="toList" type="redirectAction">userAction_list</result>
-		</action>
+		</action> -->
 		
 		<!-- 路线管理 -->
 		<action name="routeAction_*" class="routeAction" method="{1}">
 			<result name="add">/route/addRoute.jsp</result>
 			<result name="list">/route/list.jsp</result>
 			<result name="toList" type="redirectAction">routeAction_list</result>
+			<result name="routeStationManage">/route/routeStationManage.jsp</result>
 		</action>
 		
 		<!-- 站点管理 -->
@@ -36,11 +37,32 @@
 			<result name="toList" type="redirectAction">stationAction_list</result>
 		</action>
 		
-		<!-- 路线查询管理 -->
-		<action name="routeCheckAction_*" class="routeCheckAction" method="{1}">
-			<result name="checkUI">/routeCheck/checkRoute.jsp</result>
-			<result name="check">/routeCheck/showRoute.jsp</result>
+		<!-- 路线站点关系管理 -->
+		<action name="routeStationAction_*" class="routeStationAction" method="{1}">
+			<result name="toRouteStationManage" type="redirectAction">routeAction_routeStations</result>
+			
 		</action>
+		
+		<!-- 以下为Android客户端用到的action -->
+		
+		<!-- 用户登陆注册管理 -->
+		<action name="userAction_*" class="userAction" method="{1}"/>
+		
+		<!-- 路线查询查询管理 -->
+		<action name="busQueryAction_*" class="busQueryAction" method="{1}"/>
+		
+		<!-- 站点查询查询查询管理 -->
+		<action name="stationQueryAction_*" class="stationQueryAction" method="{1}"/>
+		
+		<!-- 直达路线查询管理 -->
+		<action name="directRouteCheckAction_*" class="directRouteCheckAction" method="{1}"/>
+		
+		<!-- 一次换乘路线查询管理 -->
+		<action name="oneChangeRouteCheckAction_*" class="oneChangeRouteCheckAction" method="{1}"/>
+		
+		<!-- 两次换乘路线查询管理 -->
+		<action name="twoChangeRouteCheckAction_*" class="twoChangeRouteCheckAction" method="{1}"/>
+		
 		
 
     </package>

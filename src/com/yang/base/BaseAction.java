@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.yang.service.RouteCheckService;
+import com.yang.service.RouteQueryService;
 import com.yang.service.RouteService;
 import com.yang.service.RouteStationService;
 import com.yang.service.StationService;
@@ -24,11 +24,17 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	@Resource
 	protected RouteService routeService;
 	@Resource
+	protected RouteService routeService1;
+	@Resource
 	protected StationService stationService;
 	@Resource
-	protected RouteCheckService routeCheckService;
+	protected RouteQueryService routeCheckService;
 	@Resource
 	protected RouteStationService routeStationService;
+	@Resource
+	protected RouteStationService routeStationService1;
+	@Resource
+	protected RouteStationService routeStationService2;
 
 	protected T model;
 

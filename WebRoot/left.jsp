@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <h2><a href="stationAction_list.action" target="right">站点管理</a></h2>
     <h2><a href="routeAction_list.action" target="right">路线管理</a></h2>
-    <h2><a href="routeCheckAction_checkUI.action" target="right">路线查询</a></h2>
+    <!-- <h2><a href="routeCheckAction_checkUI.action" target="right">路线查询</a></h2> -->
+   <!--  <h2><a href="routeStationAction_list.action" target="right">路线站点关系管理</a></h2> -->
   </body>
 </html>

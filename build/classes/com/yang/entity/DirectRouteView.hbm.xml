@@ -6,12 +6,15 @@
 <hibernate-mapping package="com.yang.entity">
 
 	<class name="DirectRouteView" table="view_direct_route">
-		<composite-id name="directRouteViewId" class="DirectRouteViewId">
-			<key-property name="beginStationId" column="begin_station"/>
+		<composite-id name="id" class="DirectRouteViewId">
+			<key-property name="beginStationId" column="begin_station_id"/>
+			<key-property name="beginStationName" column="begin_station_name"/>
 			<key-property name="beginMarker" column="begin_marker"/>
-			<key-property name="endStationId" column="end_station"/>
+			<key-property name="endStationId" column="end_station_id"/>
+			<key-property name="endStationName" column="end_station_name"/>
 			<key-property name="endMarker" column="end_marker"/>
 			<key-property name="routeId" column="route_id"/>
+			<key-property name="routeName" column="route_name"/>
 			<key-property name="stationCount" column="station_count"/>
 		</composite-id>
 	</class>

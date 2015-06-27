@@ -15,13 +15,14 @@ public class DirectRouteView implements Serializable{
 	 * @Fields serialVersionUID: TODO
 	 */
 	private static final long serialVersionUID = 1L;
-	private DirectRouteViewId directRouteViewId;
-	public DirectRouteViewId getDirectRouteViewId() {
-		return directRouteViewId;
+	private DirectRouteViewId id;
+	public DirectRouteViewId getId() {
+		return id;
 	}
-	public void setDirectRouteViewId(DirectRouteViewId directRouteViewId) {
-		this.directRouteViewId = directRouteViewId;
+	public void setId(DirectRouteViewId id) {
+		this.id = id;
 	}
+	
 	
 	
 }

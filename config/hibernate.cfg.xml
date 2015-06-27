@@ -25,6 +25,8 @@
 	<mapping resource="com/yang/entity/Station.hbm.xml" />
 	<mapping resource="com/yang/entity/RouteStation.hbm.xml" />
 	<mapping resource="com/yang/entity/DirectRouteView.hbm.xml" />
+	<mapping resource="com/yang/entity/OneTranferRouteView.hbm.xml" />
+	<mapping resource="com/yang/entity/TwoTranferRouteView.hbm.xml" />
 
 
 </session-factory>

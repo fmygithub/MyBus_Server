@@ -34,7 +34,9 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 	public void update(T entity) {
 		getSession().update(entity);
 	}
-
+	public void merge(T entity) {
+		getSession().merge(entity);
+	}
 	public void delete(Long id) {
 		Object obj = getSession().get(clazz, id);
 		getSession().delete(obj);

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yang.entity">
+
+	<class name="TwoTranferRouteView" table="view_two_tranfer_route">
+		<composite-id name="id" class="TwoTranferRouteViewId">
+			<key-property name="beginStationId" column="begin_station_id"/>
+			<key-property name="beginStationName" column="begin_station_name"/>
+			<key-property name="beginMarker" column="begin_marker"/>
+			<key-property name="routeId1" column="route_id1"/>
+			<key-property name="routeName1" column="route_name1"/>
+			<key-property name="stationCount1" column="station_count1"/>
+			<key-property name="tranferStationId1" column="tranfer_station_id1"/>
+			<key-property name="tranferStationName1" column="tranfer_station_name1"/>
+			<key-property name="tranferMarker11" column="tranfer_marker11"/>
+			<key-property name="tranferMarker12" column="tranfer_marker12"/>
+			<key-property name="routeId2" column="route_id2"/>
+			<key-property name="routeName2" column="route_name2"/>
+			<key-property name="stationCount2" column="station_count2"/>
+			<key-property name="tranferStationId2" column="tranfer_station_id2"/>
+			<key-property name="tranferStationName2" column="tranfer_station_name2"/>
+			<key-property name="tranferMarker22" column="tranfer_marker22"/>
+			<key-property name="tranferMarker23" column="tranfer_marker23"/>
+			<key-property name="routeId3" column="route_id3"/>
+			<key-property name="routeName3" column="route_name3"/>
+			<key-property name="stationCount3" column="station_count3"/>
+			<key-property name="endStationId" column="end_station_id"/>
+			<key-property name="endStationName" column="end_station_name"/>
+			<key-property name="endMarker" column="end_marker"/>
+		</composite-id>
+	</class>
+
+</hibernate-mapping>

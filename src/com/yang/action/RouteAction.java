@@ -24,6 +24,7 @@ public class RouteAction extends BaseAction<Route>{
 	private static final long serialVersionUID = 1L;
 	private Long[] stationIds;
 	
+
 	public Long[] getStationIds() {
 		return stationIds;
 	}
@@ -71,5 +72,24 @@ public class RouteAction extends BaseAction<Route>{
 	public String delete() {
 		routeService.delete(model.getRouteId());
 		return "toList";
+	}
+	/**
+	 * 
+	 * @Description: 显示某一公交的所有站点
+	 * @return String
+	 * @throws
+	 * @author: fengmengyang
+	 * @date: 2015-6-19
+	 */
+	public String routeStations() {
+		Route route = null;
+		Long routeId = (Long) ActionContext.getContext().getSession().get("routeId");
+		if (routeId == null) {
+			route = routeService.findById(model.getRouteId());
+		} else {
+			route = routeService.findById(routeId);
+		}
+		ActionContext.getContext().put("route", route);
+		return "routeStationManage";
 	}
 }

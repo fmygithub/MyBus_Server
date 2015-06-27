@@ -11,6 +11,8 @@ public class User {
 	private Long userId;
 	private String userName;
 	private String password;
+	private String isAdmin;
+	
 	public Long getUserId() {
 		return userId;
 	}
@@ -28,6 +30,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 	
 }
